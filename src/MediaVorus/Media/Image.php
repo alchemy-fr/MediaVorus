@@ -378,7 +378,7 @@ class Image extends DefaultMedia
                 case '0':
                     return self::COLORSPACE_GRAYSCALE;
                     break;
-                case 'rgba':    
+                # case 'rgba':    
                 case '6':
                     return self::COLORSPACE_RGBA;
                     break;
