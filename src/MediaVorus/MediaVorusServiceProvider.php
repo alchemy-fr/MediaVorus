@@ -13,17 +13,18 @@ namespace MediaVorus;
 
 use FFMpeg\Exception\ExecutableNotFoundException;
 use MediaVorus\Exception\RuntimeException;
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 
 class MediaVorusServiceProvider implements ServiceProviderInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function register(Application $app)
+    public function register(Container $app)
     {
-        $app['mediavorus'] = $app->share(function(Application $app) {
+        $app['mediavorus'] = function(Application $app) {
             $ffprobe = null;
             if (isset($app['ffmpeg.ffprobe'])) {
                 try {
@@ -34,7 +35,7 @@ class MediaVorusServiceProvider implements ServiceProviderInterface
             }
 
             return new MediaVorus($app['exiftool.reader'], $app['exiftool.writer'], $ffprobe);
-        });
+        };
     }
 
     /**

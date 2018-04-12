@@ -8,8 +8,9 @@ use MediaVorus\Utils\RawImageMimeTypeGuesser;
 use MediaVorus\Utils\PostScriptMimeTypeGuesser;
 use MediaVorus\Utils\AudioMimeTypeGuesser;
 use MediaVorus\Utils\VideoMimeTypeGuesser;
+use \PHPUnit\Framework\TestCase as BaseTestCase;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+class TestCase extends BaseTestCase
 {
     public static $registered = false;
 

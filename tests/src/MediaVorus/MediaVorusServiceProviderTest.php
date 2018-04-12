@@ -3,6 +3,7 @@
 namespace MediaVorus;
 
 use FFMpeg\FFMpegServiceProvider;
+use MediaVorus\Exception\RuntimeException;
 use PHPExiftool\PHPExiftoolServiceProvider;
 use Silex\Application;
 
@@ -62,8 +63,8 @@ class MediaVorusServiceProvideTest extends TestCase
     }
 
     /**
-     * @expectedException MediaVorus\Exception\RuntimeException
-     * @expectedExceptionMessage MediaVorus Service Provider requires Exiftool Service Provider
+     * @expectedException RuntimeException
+     * @expectedExceptionMessage 'MediaVorus Service Provider requires Exiftool Service Provider'
      */
     public function testFailOnExiftool()
     {
