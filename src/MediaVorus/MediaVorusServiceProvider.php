@@ -15,9 +15,10 @@ use FFMpeg\Exception\ExecutableNotFoundException;
 use MediaVorus\Exception\RuntimeException;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+use Silex\Api\BootableProviderInterface;
 use Silex\Application;
 
-class MediaVorusServiceProvider implements ServiceProviderInterface
+class MediaVorusServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
     /**
      * {@inheritdoc}

@@ -64,7 +64,7 @@ class MediaVorusServiceProvideTest extends TestCase
 
     /**
      * @expectedException RuntimeException
-     * @expectedExceptionMessage 'MediaVorus Service Provider requires Exiftool Service Provider'
+     * @expectedExceptionMessage MediaVorus Service Provider requires Exiftool Service Provider
      */
     public function testFailOnExiftool()
     {
