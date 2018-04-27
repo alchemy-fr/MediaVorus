@@ -21,8 +21,9 @@ use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
 class PostScriptMimeTypeGuesser implements MimeTypeGuesserInterface
 {
     public static $postscriptMimeTypes = array(
-        'eps' => 'application/postscript',
-        'ai'  => 'application/illustrator',
+        'eps'  => 'application/postscript',
+        'ai'   => 'application/illustrator',
+        'indd' => 'application/x-indesign',
     );
 
     /**
