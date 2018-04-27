@@ -173,6 +173,7 @@ class MediaVorus
             case $mime === 'application/vnd.oasis.opendocument.presentation':
             case $mime === 'application/vnd.oasis.opendocument.speadsheet':
             case $mime === 'application/vnd.oasis.opendocument.text':
+            case $mime === 'application/x-indesign':
                 return 'MediaVorus\Media\Document';
                 break;
 
