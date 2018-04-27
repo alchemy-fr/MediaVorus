@@ -57,6 +57,10 @@ class MediaVorusTest extends TestCase
         $this->assertInstanceOf('\\MediaVorus\\Media\\Flash', $media);
         $media = $this->object->guess(__DIR__ . '/../../files/Test.ogv');
         $this->assertInstanceOf('\\MediaVorus\\Media\\Video', $media);
+        $media = $this->object->guess(__DIR__ . '/../../files/Hello.odt');
+        $this->assertInstanceOf('\\MediaVorus\\Media\\Document', $media);
+        $media = $this->object->guess(__DIR__ . '/../../files/Unittestfile.indd');
+        $this->assertInstanceOf('\\MediaVorus\\Media\\Document', $media);
     }
 
     /**
