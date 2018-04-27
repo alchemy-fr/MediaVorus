@@ -57,6 +57,10 @@ class MediaVorusTest extends TestCase
         $this->assertInstanceOf('\\MediaVorus\\Media\\Flash', $media);
         $media = $this->object->guess(__DIR__ . '/../../files/Test.ogv');
         $this->assertInstanceOf('\\MediaVorus\\Media\\Video', $media);
+        $media = $this->object->guess(__DIR__ . '/../../files/Hello.odt');
+        $this->assertInstanceOf('\\MediaVorus\\Media\\Document', $media);
+        $media = $this->object->guess(__DIR__ . '/../../files/Unittestfile.indd');
+        $this->assertInstanceOf('\\MediaVorus\\Media\\Document', $media);
     }
 
     /**
@@ -66,7 +70,7 @@ class MediaVorusTest extends TestCase
     {
         $medias = $this->object->inspectDirectory(__DIR__ . '/../../files');
         $this->assertInstanceOf('\\MediaVorus\\MediaCollection', $medias);
-        $this->assertEquals(22, count($medias));
+        $this->assertEquals(24, count($medias));
 
         foreach ($medias as $media) {
             if ($media->getFile()->getFilename() === 'KyoceraRaw.raw') {

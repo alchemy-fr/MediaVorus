@@ -18,12 +18,13 @@ use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
  * @author      Romain Neutron - imprec@gmail.com
  * @license     http://opensource.org/licenses/MIT MIT
  */
-class PostScriptMimeTypeGuesser implements MimeTypeGuesserInterface
+class DocumentMimeTypeGuesser implements MimeTypeGuesserInterface
 {
-    public static $postscriptMimeTypes = array(
-        'eps' => 'application/postscript',
-        'ai'  => 'application/illustrator',
-        'indd' => 'application/x-indesign',
+    public static $documentMimeTypes = array(
+        'xls'  => 'application/vnd.ms-excel',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
     );
 
     /**
@@ -33,8 +34,8 @@ class PostScriptMimeTypeGuesser implements MimeTypeGuesserInterface
     {
         $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
 
-        if (array_key_exists($extension, static::$postscriptMimeTypes)) {
-            return static::$postscriptMimeTypes[$extension];
+        if (array_key_exists($extension, static::$documentMimeTypes)) {
+            return static::$documentMimeTypes[$extension];
         }
 
         return null;
