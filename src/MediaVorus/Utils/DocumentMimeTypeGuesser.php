@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
  */
 class DocumentMimeTypeGuesser implements MimeTypeGuesserInterface
 {
-    public static $postscriptMimeTypes = array(
+    public static $documentMimeTypes = array(
         'xls'  => 'application/vnd.ms-excel',
         'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -34,8 +34,8 @@ class DocumentMimeTypeGuesser implements MimeTypeGuesserInterface
     {
         $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
 
-        if (array_key_exists($extension, static::$postscriptMimeTypes)) {
-            return static::$postscriptMimeTypes[$extension];
+        if (array_key_exists($extension, static::$documentMimeTypes)) {
+            return static::$documentMimeTypes[$extension];
         }
 
         return null;

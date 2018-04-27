@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
  */
 class FlashMimeTypeGuesser implements MimeTypeGuesserInterface
 {
-    public static $postscriptMimeTypes = array(
+    public static $flashMimeTypes = array(
         'swf' => 'application/x-shockwave-flash',
     );
 
@@ -31,8 +31,8 @@ class FlashMimeTypeGuesser implements MimeTypeGuesserInterface
     {
         $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
 
-        if (array_key_exists($extension, static::$postscriptMimeTypes)) {
-            return static::$postscriptMimeTypes[$extension];
+        if (array_key_exists($extension, static::$flashMimeTypes)) {
+            return static::$flashMimeTypes[$extension];
         }
 
         return null;

@@ -70,7 +70,7 @@ class MediaVorusTest extends TestCase
     {
         $medias = $this->object->inspectDirectory(__DIR__ . '/../../files');
         $this->assertInstanceOf('\\MediaVorus\\MediaCollection', $medias);
-        $this->assertEquals(22, count($medias));
+        $this->assertEquals(24, count($medias));
 
         foreach ($medias as $media) {
             if ($media->getFile()->getFilename() === 'KyoceraRaw.raw') {
