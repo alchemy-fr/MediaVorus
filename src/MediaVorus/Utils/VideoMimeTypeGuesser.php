@@ -24,6 +24,8 @@ class VideoMimeTypeGuesser implements MimeTypeGuesserInterface
         'webm' => 'video/webm',
         'ogv'  => 'video/ogg',
         'mts'  => 'video/m2ts',
+        'mov'  => 'video/quicktime',
+        'm4v'  => 'video/m4v',
     );
 
     /**
