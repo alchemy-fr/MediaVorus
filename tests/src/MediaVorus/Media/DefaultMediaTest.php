@@ -53,7 +53,7 @@ class DefaultMediaTest extends TestCase
     public function testGetLongitude()
     {
         $this->assertInternalType('float', $this->GPSobject->getLongitude());
-        $this->assertEquals(1.91416666666667, $this->GPSobject->getLongitude());
+        $this->assertEquals(-1.91416666666667, $this->GPSobject->getLongitude());
     }
 
     /**
@@ -61,7 +61,7 @@ class DefaultMediaTest extends TestCase
      */
     public function testGetLongitudeRef()
     {
-        $this->assertTrue(in_array($this->GPSobject->getLongitudeRef(), array('W', 'E')));
+        $this->assertFalse(in_array($this->GPSobject->getLongitudeRef(), array('W', 'E')));
     }
 
     /**
@@ -78,7 +78,7 @@ class DefaultMediaTest extends TestCase
      */
     public function testGetLatitudeRef()
     {
-        $this->assertTrue(in_array($this->GPSobject->getLatitudeRef(), array('N', 'S')));
+        $this->assertFalse(in_array($this->GPSobject->getLatitudeRef(), array('N', 'S')));
     }
 }
 
