@@ -142,8 +142,8 @@ class DefaultMedia implements MediaInterface
      */
     public function getLongitude()
     {
-        if ($this->getMetadatas()->containsKey('GPS:GPSLongitude')) {
-            return (float) $this->getMetadatas()->get('GPS:GPSLongitude')->getValue()->asString();
+        if ($this->getMetadatas()->containsKey('Composite:GPSLongitude')) {
+            return (float) $this->getMetadatas()->get('Composite:GPSLongitude')->getValue()->asString();
         }
 
         return null;
@@ -158,8 +158,8 @@ class DefaultMedia implements MediaInterface
      */
     public function getLongitudeRef()
     {
-        if ($this->getMetadatas()->containsKey('GPS:GPSLongitudeRef')) {
-            switch (strtolower($this->getMetadatas()->get('GPS:GPSLongitudeRef')->getValue()->asString())) {
+        if ($this->getMetadatas()->containsKey('Composite:GPSLongitudeRef')) {
+            switch (strtolower($this->getMetadatas()->get('Composite:GPSLongitudeRef')->getValue()->asString())) {
                 case 'w':
                     return self::GPSREF_LONGITUDE_WEST;
                     break;
@@ -181,8 +181,8 @@ class DefaultMedia implements MediaInterface
      */
     public function getLatitude()
     {
-        if ($this->getMetadatas()->containsKey('GPS:GPSLatitude')) {
-            return (float) $this->getMetadatas()->get('GPS:GPSLatitude')->getValue()->asString();
+        if ($this->getMetadatas()->containsKey('Composite:GPSLatitude')) {
+            return (float) $this->getMetadatas()->get('Composite:GPSLatitude')->getValue()->asString();
         }
 
         return null;
@@ -197,8 +197,8 @@ class DefaultMedia implements MediaInterface
      */
     public function getLatitudeRef()
     {
-        if ($this->getMetadatas()->containsKey('GPS:GPSLatitudeRef')) {
-            switch (strtolower($this->getMetadatas()->get('GPS:GPSLatitudeRef')->getValue()->asString())) {
+        if ($this->getMetadatas()->containsKey('Composite:GPSLatitudeRef')) {
+            switch (strtolower($this->getMetadatas()->get('Composite:GPSLatitudeRef')->getValue()->asString())) {
                 case 'n':
                     return self::GPSREF_LATITUDE_NORTH;
                     break;
