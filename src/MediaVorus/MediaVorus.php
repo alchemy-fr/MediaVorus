@@ -157,6 +157,7 @@ class MediaVorus
             case $mime === 'application/powerpoint':
             case $mime === 'application/vnd.ms-powerpoint':
             case $mime === 'application/vnd.ms-excel':
+            case $mime === 'application/vnd.ms-office':
             case $mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             case $mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.template':
             case $mime === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
@@ -171,7 +172,7 @@ class MediaVorus
             case $mime === 'application/vnd.oasis.opendocument.chart':
             case $mime === 'application/vnd.oasis.opendocument.graphics':
             case $mime === 'application/vnd.oasis.opendocument.presentation':
-            case $mime === 'application/vnd.oasis.opendocument.speadsheet':
+            case $mime === 'application/vnd.oasis.opendocument.spreadsheet':
             case $mime === 'application/vnd.oasis.opendocument.text':
             case $mime === 'application/x-indesign':
                 return 'MediaVorus\Media\Document';
