@@ -139,6 +139,7 @@ class MediaVorus
 
             case strpos($mime, 'video/') === 0:
             case $mime === 'application/vnd.rn-realmedia':
+            case $mime === 'application/mxf':
                 return 'MediaVorus\Media\Video';
                 break;
 
