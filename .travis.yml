@@ -4,7 +4,6 @@ sudo: required
 
 before_install:
   - composer self-update --rollback
-  #- sudo add-apt-repository ppa:mc3man/trusty-media -y
   - sudo apt-get update
   - sudo apt-get install ffmpeg
   - phpenv config-rm xdebug.ini
