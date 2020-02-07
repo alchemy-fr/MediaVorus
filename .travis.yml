@@ -1,11 +1,12 @@
 language: php
 
-#sudo: required
+sudo: required
 
 before_install:
-  - add-apt-repository ppa:mc3man/trusty-media -y
-  - apt-get update
-  - apt-get install ffmpeg
+  - composer self-update --rollback
+  - sudo add-apt-repository ppa:mc3man/trusty-media -y
+  - sudo apt-get update
+  - sudo apt-get install ffmpeg
   - phpenv config-rm xdebug.ini
 install:
   - composer update --prefer-source
