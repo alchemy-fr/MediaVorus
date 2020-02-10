@@ -409,14 +409,10 @@ class Image extends DefaultMedia
      */
     protected function extractFromDimensions($WidthXHeight)
     {
-        if (strpos($WidthXHeight, 'x') !== false) {
-            $values = explode('x', strtolower($WidthXHeight));
-        } else {
-            $values = explode(' ', strtolower($WidthXHeight));
-        } 
+        preg_match("/(\d+)\D+(\d+)/", $WidthXHeight, $values);
 
-        if (count($values) === 2 && ctype_digit($values[0]) && ctype_digit($values[1])) {
-            return array('width'  => $values[0], 'height' => $values[1]);
+        if (count($values) === 3 && ctype_digit($values[1]) && ctype_digit($values[2])) {
+            return array('width'  => $values[1], 'height' => $values[2]);
         }
 
         return null;
